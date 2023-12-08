@@ -17,6 +17,7 @@ home
         │   │           └── brs_params_0100000.pt
         │   └── dataset
         │       └── brs
+        │           └── FOR_INFERENCE_FOLDER
         ├── static
         │   ├── inputs
         │   └── outputs
@@ -24,8 +25,9 @@ home
 ```
 
 # Data
-- Dataset (in Google Drive)
-- Weight file (in Google Drive)
+- BlackRubberShoes Dataset (in Google Drive) ([Source](https://www.youtube.com/playlist?list=PLrNFl43wt6gCEdWfQjzPf2Dnza7liRcpL))
+- [All-Age-Faces-Dataset](https://github.com/JingchunCheng/All-Age-Faces-Dataset)
+- Weight File (in Google Drive)
 
 # EC2 Template User Data
 for Load Balancing, Auto Scaling
@@ -52,3 +54,8 @@ echo "serve"
 cd /home/ec2-user/efs/serve_code
 nohup gunicorn -b [HOST]:[PORT] -w 1 'app:app' &
 ```
+
+# Training Result
+<div align="center">
+  <img src="./A2B_0100000.png">
+</div>
