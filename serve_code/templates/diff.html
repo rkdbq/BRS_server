@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>Your selfie</p>
+        {% if True %}
+        <img src="{{ url_for('static', filename=input_img) }}", width="200">
+        {% endif %}
+        <br/>
+
+        <p>Inferenced Image</p>
+        {% if True %}
+        <img src="{{ url_for('static', filename=output_img) }}", width="200">
+        {% endif %}
+    </body>
+</html>
