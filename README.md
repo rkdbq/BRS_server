@@ -28,9 +28,9 @@ home
 - [U-GAT-IT Pytorch](https://github.com/znxlwm/UGATIT-pytorch)
 
 # Data
-- BlackRubberShoes Dataset (in Google Drive) ([Source](https://www.youtube.com/playlist?list=PLrNFl43wt6gCEdWfQjzPf2Dnza7liRcpL))
+- BlackRubberShoes Dataset ([Source](https://www.youtube.com/playlist?list=PLrNFl43wt6gCEdWfQjzPf2Dnza7liRcpL))
 - [All-Age-Faces-Dataset](https://github.com/JingchunCheng/All-Age-Faces-Dataset)
-- Weight File (in Google Drive)
+- Weight File
 
 # EC2 Template User Data
 for Load Balancing, Auto Scaling
