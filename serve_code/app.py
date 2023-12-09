@@ -70,7 +70,7 @@ def inference_selfie():
             'img_size': 128,
             'img_ch': 3,
 
-            'result_dir': 'brs_results',
+            'result_dir': 'brs_result',
             'device': 'cpu',
             'benchmark_flag': False,
             'resume': False,
