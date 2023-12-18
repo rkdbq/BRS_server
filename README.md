@@ -60,5 +60,5 @@ nohup gunicorn -b [HOST]:[PORT] -w 1 'app:app' &
 
 # Training Result
 <div align="center">
-  <img src="./serve_code/model/YOUR_DATASET_NAME_result/YOUR_DATASET_NAME/img/A2B_0100000.png">
+  <img src="./serve_code/model/brs_result/female/img/A2B_0100000.png">
 </div>
