@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, request
 
-import os, shutil, random, time, cv2, requests, psutil, threading
+import os, shutil, random, time, requests, psutil, threading
 
 from argparse import Namespace
 from model.UGATIT import UGATIT
@@ -13,7 +13,7 @@ lock = threading.Lock()
 @app.route('/')
 def home():
     host_ip = requests.get("https://ipgrab.io/")
-    return render_template('index.html', host_ip=host_ip.text)
+    return render_template('index_home.html', host_ip=host_ip.text)
 
 @app.route('/inference', methods=['POST'])
 def inference_selfie():
@@ -28,11 +28,14 @@ def inference_selfie():
         chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
         randname = ''.join(random.choice(chars) for _ in range(30))
         filename = randname + '.jpg'
+        
+        sex = 'female'
+        if 'gender' in request.form:
+            sex = request.form['gender']
 
         input_file = f'static/inputs/{filename}'
         output_file = f'static/outputs/{filename}'
-        resized_file = f'static/resized/{filename}'
-        test_path = f'model/dataset/brs/{randname}/'
+        test_path = f'model/dataset/{sex}/{randname}'
 
         # 모델 이미지 폴더 초기화
         os.mkdir(test_path)
@@ -48,7 +51,7 @@ def inference_selfie():
         # 이미지 생성
         args = {
             'light': False,
-            'dataset': 'brs',
+            'dataset': sex,
 
             'iteration': 100000,
             'batch_size': 1,

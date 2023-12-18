@@ -1,0 +1,117 @@
+/* style.css */
+/* dark mode */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+}
+
+.navbar {
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(13,13,13);
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  /* 수정: 자식 요소를 양쪽으로 정렬 */
+}
+
+.container {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+}
+
+#main_foam {
+  flex: 1;
+  display: grid;
+}
+
+h1 {
+  margin: 0;
+  color: white;
+}
+
+#image-container {
+  border: 5px dashed rgb(13,13,13);
+  color: rgb(13,13,13);
+  margin: 40px 100px;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2;
+  /* 수정: 두 번째 행에 배치 */
+  border-radius: 50px;
+  background-image: url('kichul.png');
+  background-size: 450px; /* 이미지를 컨테이너에 맞게 조절 */
+  background-position: center bottom; /* 이미지를 오른쪽으로 정렬 */
+  background-repeat: no-repeat; /* 이미지 반복 없음 */
+}
+
+#image-container.dragover {
+  border: 5px dashed #757575;
+  /* 추가: 드래그 중일 때의 스타일 */
+  color: #757575;
+}
+
+#upload-text {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#uploaded-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+#button_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  grid-row: 3;
+  /* 수정: 세 번째 행에 배치 */
+}
+
+
+#gender_container {
+  margin-left: auto;
+  /* 나머지 부분을 오른쪽으로 이동 */
+}
+
+#button_container label {
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #444;
+}

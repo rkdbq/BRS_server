@@ -384,12 +384,13 @@ class UGATIT(object) :
 
             fake_A2A, _, fake_A2A_heatmap = self.genB2A(real_A)
 
-            A2B = np.concatenate((RGB2BGR(tensor2numpy(denorm(real_A[0]))),
-                                  cam(tensor2numpy(fake_A2A_heatmap[0]), self.img_size),
-                                  RGB2BGR(tensor2numpy(denorm(fake_A2A[0]))),
-                                  cam(tensor2numpy(fake_A2B_heatmap[0]), self.img_size),
-                                  RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))),
-                                  cam(tensor2numpy(fake_A2B2A_heatmap[0]), self.img_size),
-                                  RGB2BGR(tensor2numpy(denorm(fake_A2B2A[0])))), 0)
+            # A2B = np.concatenate((RGB2BGR(tensor2numpy(denorm(real_A[0]))),
+            #                       cam(tensor2numpy(fake_A2A_heatmap[0]), self.img_size),
+            #                       RGB2BGR(tensor2numpy(denorm(fake_A2A[0]))),
+            #                       cam(tensor2numpy(fake_A2B_heatmap[0]), self.img_size),
+            #                       RGB2BGR(tensor2numpy(denorm(fake_A2B[0]))),
+            #                       cam(tensor2numpy(fake_A2B2A_heatmap[0]), self.img_size),
+            #                       RGB2BGR(tensor2numpy(denorm(fake_A2B2A[0])))), 0)
+            A2B = RGB2BGR(tensor2numpy(denorm(fake_A2B[0])))
 
             cv2.imwrite(out_path, A2B * 255.0)

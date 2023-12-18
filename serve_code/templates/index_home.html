@@ -1,0 +1,49 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이미지 업로드 및 Drag & Drop 예제</title>
+  <link id="themestyle"rel="stylesheet" href=" {{ url_for('static', filename='css/lightstyle.css') }} ">
+</head>
+
+<body>
+  <div class="navbar">
+    <!-- <img src="logo.png" alt="로고 이미지" class="logo"> -->
+    <h1>BRS</h1>
+    <button id="theme-toggle">테마 변경</button>
+  </div>
+  <form id='main_foam' action="http://{{ host_ip }}:[PORT]/inference" method="POST" enctype="multipart/form-data"> 
+  <div class="container">
+      <!-- 이미지 업로드를 위한 input 요소 -->
+      <div id="image-container" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter(event)"
+        ondragleave="dragLeave(event)">
+        <p id="upload-text">
+          이미지를 드래그 앤 드롭하거나, 클릭하여 파일을 선택하세요
+        </p>
+        <input type="file" id="image-input" name="file" accept="image/*" style="display: none" />
+        <img id="uploaded-image" />
+      </div>
+      <div id="button_container">
+        <div id="gender_container">
+          <label>
+            <input type="radio" name="gender" value="male" />
+            <img src=" {{ url_for('static', filename='css/male.png') }}" style="max-width: 50px" />
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" />
+            <img src=" {{ url_for('static', filename='css/female.png') }}" style="max-width: 50px" />
+          </label>
+        </div>
+        <input type="submit" value="이미지 처리"/>
+      </div>
+    </div>
+  </form>
+
+  <script src=" {{ url_for('static', filename='scripts/app.js') }}"></script>
+</body>
+
+</html>
